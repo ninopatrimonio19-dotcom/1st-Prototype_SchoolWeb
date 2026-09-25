@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title --></title>
+    <link rel="stylesheet" href="/src/index.css" />
+    <!-- figma:head-end -->
+  </head>
+  <body>
+    <!-- figma:body-start -->
+    <div class="app-shell">
+      <header class="site-header">
+        <button class="brand" data-go-to="home" aria-label="STVEP home">
+          <span class="brand-mark"><span>S</span></span>
+          <span class="brand-copy">stvep<small>School organizer</small></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-go-to="home">Home</button>
+          <button class="nav-link" data-go-to="about">About</button>
+          <button class="nav-link" data-go-to="contact">Contact</button>
+        </nav>
+
+        <button class="header-cta" data-go-to="contact">
+          Join our school <span aria-hidden="true">→</span>
+        </button>
+        <button class="menu-button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </header>
+
+      <main class="page active" id="home">
+        <section class="hero">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="hero-copy">
+            <div class="eyebrow">✦ Learning that moves with you</div>
+            <h1>Where curious minds<br /><em>build what’s next.</em></h1>
+            <p>STVEP is a future-ready school organizer helping students learn, create, and grow with confidence—on campus and beyond.</p>
+            <div class="hero-actions">
+              <button class="primary-button" id="explore-events">Explore events <span aria-hidden="true">→</span></button>
+              <button class="text-button" data-go-to="about"><span class="play" aria-hidden="true">▶</span> Discover our story</button>
+            </div>
+            <div class="trust-row">
+              <div class="avatars"><span>AM</span><span>JL</span><span>KS</span></div>
+              <div><strong>1,200+</strong><small>active learners</small></div>
+              <div class="trust-divider"></div>
+              <div><strong>48</strong><small>creative mentors</small></div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="image-frame">
+              <img src="https://images.unsplash.com/photo-1758270705518-b61b40527e76?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;q=85&amp;w=1200" alt="Students collaborating around a laptop in class" />
+              <div class="image-gradient"></div>
+              <div class="floating-card top">
+                <span class="icon-bubble coral" aria-hidden="true">◎</span>
+                <div><strong>Team projects</strong><small>Learn better, together</small></div>
+              </div>
+              <div class="floating-card bottom">
+                <span class="progress-ring">86<small>%</small></span>
+                <div><strong>Skills unlocked</strong><small>This learning term</small></div>
+              </div>
+            </div>
+            <div class="doodle-arrow">↗</div>
+          </div>
+        </section>
+
+        <section class="marquee" aria-label="Learning areas">
+          <div>Creative confidence <span>✦</span> Digital fluency <span>✦</span> Real-world skills <span>✦</span> Lifelong curiosity</div>
+        </section>
+
+        <section class="events-section" id="events">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow dark">□ What’s happening</div>
+              <h2>Digital tools, <em>real connections.</em></h2>
+            </div>
+            <p>Explore hands-on sessions designed to turn screen time into skill time. Pick a date and save your spot.</p>
+          </div>
+
+          <div class="calendar-layout">
+            <div class="calendar-card">
+              <div class="calendar-header">
+                <button id="previous-month" aria-label="Previous month">‹</button>
+                <h3 id="calendar-month"></h3>
+                <button id="next-month" aria-label="Next month">›</button>
+              </div>
+              <div class="weekdays">
+                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+              </div>
+              <div class="calendar-grid" id="calendar-grid"></div>
+              <div class="calendar-key">
+                <span><i class="purple-dot"></i> Workshop</span>
+                <span><i class="coral-dot"></i> Live class</span>
+                <span><i class="yellow-dot"></i> Challenge</span>
+              </div>
+            </div>
+
+            <div class="event-panel">
+              <div class="event-date"><strong id="event-day"></strong><span>MAY<br />2025</span></div>
+              <span class="event-type" id="event-type"></span>
+              <h3 id="event-title"></h3>
+              <p id="event-description"></p>
+              <div class="event-meta"><span aria-hidden="true">□</span><span id="event-time"></span></div>
+              <button class="primary-button coral-button" data-go-to="contact">Reserve my spot <span aria-hidden="true">→</span></button>
+              <small class="spots">12 spots remaining · Free for STVEP students</small>
+            </div>
+
+            <div class="upcoming-list">
+              <h3>Up next</h3>
+              <div id="upcoming-events"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <main class="page inner-page" id="about">
+        <section class="page-hero about-hero">
+          <div class="eyebrow">✦ Our purpose</div>
+          <h1>School should prepare you for <em>more than a test.</em></h1>
+          <p>STVEP brings thoughtful organization and modern learning together, giving every student space to discover what they can do.</p>
+        </section>
+        <section class="values-grid">
+          <article><span>01</span><h2>Curiosity first</h2><p>We begin with better questions and build the confidence to explore them.</p></article>
+          <article><span>02</span><h2>Create together</h2><p>Learning becomes meaningful when ideas are shared, tested, and improved as a team.</p></article>
+          <article><span>03</span><h2>Ready for real life</h2><p>Every project connects practical digital skills with real challenges and opportunities.</p></article>
+        </section>
+        <section class="quote-band">
+          <blockquote>“Every learner deserves the tools, trust, and time to find their own way forward.”</blockquote>
+          <p>— The STVEP teaching team</p>
+        </section>
+      </main>
+
+      <main class="page inner-page contact-page" id="contact">
+        <section class="contact-intro">
+          <div class="eyebrow dark">→ Start a conversation</div>
+          <h1>Let’s make learning <em>click.</em></h1>
+          <p>Questions about enrollment, events, or school life? Our friendly team usually replies within one school day.</p>
+          <div class="contact-details">
+            <div><span aria-hidden="true">@</span><div><small>Email us</small><strong>hello@stvep.school</strong></div></div>
+            <div><span aria-hidden="true">⌖</span><div><small>Visit us</small><strong>42 Discovery Lane, Learning District</strong></div></div>
+          </div>
+        </section>
+
+        <form class="contact-form" id="contact-form">
+          <div id="form-fields">
+            <div class="field-row">
+              <label>First name<input required placeholder="Your first name" /></label>
+              <label>Last name<input required placeholder="Your last name" /></label>
+            </div>
+            <label>Email address<input type="email" required placeholder="you@example.com" /></label>
+            <label>I’m interested in
+              <select required>
+                <option value="" disabled selected>Choose a topic</option>
+                <option>School enrollment</option>
+                <option>Digital tools events</option>
+                <option>Partnerships</option>
+                <option>Something else</option>
+              </select>
+            </label>
+            <label>Your message<textarea required rows="4" placeholder="How can we help?"></textarea></label>
+            <button class="primary-button" type="submit">Send message <span aria-hidden="true">→</span></button>
+          </div>
+
+          <div class="success-message" id="success-message" hidden>
+            <span aria-hidden="true">✓</span>
+            <h2>Message received!</h2>
+            <p>Thanks for reaching out. The STVEP team will be in touch soon.</p>
+            <button type="button" class="text-button" id="send-another">Send another message</button>
+          </div>
+        </form>
+      </main>
+
+      <footer>
+        <div class="brand footer-brand">
+          <span class="brand-mark"><span>S</span></span>
+          <span class="brand-copy">stvep<small>School organizer</small></span>
+        </div>
+        <p>Growing curious minds for a changing world.</p>
+        <span>© 2025 STVEP School</span>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/app.js"></script>
+    <!-- figma:body-end -->
+  </body>
+</html>
