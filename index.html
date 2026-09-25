@@ -1,190 +1,399 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- figma:head-start -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><!-- figma:title --></title>
-    <link rel="stylesheet" href="/src/index.css" />
-    <!-- figma:head-end -->
-  </head>
-  <body>
-    <!-- figma:body-start -->
-    <div class="app-shell">
-      <header class="site-header">
-        <button class="brand" data-go-to="home" aria-label="STVEP home">
-          <span class="brand-mark"><span>S</span></span>
-          <span class="brand-copy">stvep<small>School organizer</small></span>
-        </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcenova Academy of Arts, Science & Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-        <nav class="main-nav" aria-label="Main navigation">
-          <button class="nav-link active" data-go-to="home">Home</button>
-          <button class="nav-link" data-go-to="about">About</button>
-          <button class="nav-link" data-go-to="contact">Contact</button>
-        </nav>
-
-        <button class="header-cta" data-go-to="contact">
-          Join our school <span aria-hidden="true">→</span>
-        </button>
-        <button class="menu-button" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </header>
-
-      <main class="page active" id="home">
-        <section class="hero">
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
-          <div class="hero-copy">
-            <div class="eyebrow">✦ Learning that moves with you</div>
-            <h1>Where curious minds<br /><em>build what’s next.</em></h1>
-            <p>STVEP is a future-ready school organizer helping students learn, create, and grow with confidence—on campus and beyond.</p>
-            <div class="hero-actions">
-              <button class="primary-button" id="explore-events">Explore events <span aria-hidden="true">→</span></button>
-              <button class="text-button" data-go-to="about"><span class="play" aria-hidden="true">▶</span> Discover our story</button>
-            </div>
-            <div class="trust-row">
-              <div class="avatars"><span>AM</span><span>JL</span><span>KS</span></div>
-              <div><strong>1,200+</strong><small>active learners</small></div>
-              <div class="trust-divider"></div>
-              <div><strong>48</strong><small>creative mentors</small></div>
-            </div>
-          </div>
-
-          <div class="hero-visual">
-            <div class="image-frame">
-              <img src="https://images.unsplash.com/photo-1758270705518-b61b40527e76?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;q=85&amp;w=1200" alt="Students collaborating around a laptop in class" />
-              <div class="image-gradient"></div>
-              <div class="floating-card top">
-                <span class="icon-bubble coral" aria-hidden="true">◎</span>
-                <div><strong>Team projects</strong><small>Learn better, together</small></div>
-              </div>
-              <div class="floating-card bottom">
-                <span class="progress-ring">86<small>%</small></span>
-                <div><strong>Skills unlocked</strong><small>This learning term</small></div>
-              </div>
-            </div>
-            <div class="doodle-arrow">↗</div>
-          </div>
-        </section>
-
-        <section class="marquee" aria-label="Learning areas">
-          <div>Creative confidence <span>✦</span> Digital fluency <span>✦</span> Real-world skills <span>✦</span> Lifelong curiosity</div>
-        </section>
-
-        <section class="events-section" id="events">
-          <div class="section-heading">
-            <div>
-              <div class="eyebrow dark">□ What’s happening</div>
-              <h2>Digital tools, <em>real connections.</em></h2>
-            </div>
-            <p>Explore hands-on sessions designed to turn screen time into skill time. Pick a date and save your spot.</p>
-          </div>
-
-          <div class="calendar-layout">
-            <div class="calendar-card">
-              <div class="calendar-header">
-                <button id="previous-month" aria-label="Previous month">‹</button>
-                <h3 id="calendar-month"></h3>
-                <button id="next-month" aria-label="Next month">›</button>
-              </div>
-              <div class="weekdays">
-                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-              </div>
-              <div class="calendar-grid" id="calendar-grid"></div>
-              <div class="calendar-key">
-                <span><i class="purple-dot"></i> Workshop</span>
-                <span><i class="coral-dot"></i> Live class</span>
-                <span><i class="yellow-dot"></i> Challenge</span>
-              </div>
-            </div>
-
-            <div class="event-panel">
-              <div class="event-date"><strong id="event-day"></strong><span>MAY<br />2025</span></div>
-              <span class="event-type" id="event-type"></span>
-              <h3 id="event-title"></h3>
-              <p id="event-description"></p>
-              <div class="event-meta"><span aria-hidden="true">□</span><span id="event-time"></span></div>
-              <button class="primary-button coral-button" data-go-to="contact">Reserve my spot <span aria-hidden="true">→</span></button>
-              <small class="spots">12 spots remaining · Free for STVEP students</small>
-            </div>
-
-            <div class="upcoming-list">
-              <h3>Up next</h3>
-              <div id="upcoming-events"></div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <main class="page inner-page" id="about">
-        <section class="page-hero about-hero">
-          <div class="eyebrow">✦ Our purpose</div>
-          <h1>School should prepare you for <em>more than a test.</em></h1>
-          <p>STVEP brings thoughtful organization and modern learning together, giving every student space to discover what they can do.</p>
-        </section>
-        <section class="values-grid">
-          <article><span>01</span><h2>Curiosity first</h2><p>We begin with better questions and build the confidence to explore them.</p></article>
-          <article><span>02</span><h2>Create together</h2><p>Learning becomes meaningful when ideas are shared, tested, and improved as a team.</p></article>
-          <article><span>03</span><h2>Ready for real life</h2><p>Every project connects practical digital skills with real challenges and opportunities.</p></article>
-        </section>
-        <section class="quote-band">
-          <blockquote>“Every learner deserves the tools, trust, and time to find their own way forward.”</blockquote>
-          <p>— The STVEP teaching team</p>
-        </section>
-      </main>
-
-      <main class="page inner-page contact-page" id="contact">
-        <section class="contact-intro">
-          <div class="eyebrow dark">→ Start a conversation</div>
-          <h1>Let’s make learning <em>click.</em></h1>
-          <p>Questions about enrollment, events, or school life? Our friendly team usually replies within one school day.</p>
-          <div class="contact-details">
-            <div><span aria-hidden="true">@</span><div><small>Email us</small><strong>hello@stvep.school</strong></div></div>
-            <div><span aria-hidden="true">⌖</span><div><small>Visit us</small><strong>42 Discovery Lane, Learning District</strong></div></div>
-          </div>
-        </section>
-
-        <form class="contact-form" id="contact-form">
-          <div id="form-fields">
-            <div class="field-row">
-              <label>First name<input required placeholder="Your first name" /></label>
-              <label>Last name<input required placeholder="Your last name" /></label>
-            </div>
-            <label>Email address<input type="email" required placeholder="you@example.com" /></label>
-            <label>I’m interested in
-              <select required>
-                <option value="" disabled selected>Choose a topic</option>
-                <option>School enrollment</option>
-                <option>Digital tools events</option>
-                <option>Partnerships</option>
-                <option>Something else</option>
-              </select>
-            </label>
-            <label>Your message<textarea required rows="4" placeholder="How can we help?"></textarea></label>
-            <button class="primary-button" type="submit">Send message <span aria-hidden="true">→</span></button>
-          </div>
-
-          <div class="success-message" id="success-message" hidden>
-            <span aria-hidden="true">✓</span>
-            <h2>Message received!</h2>
-            <p>Thanks for reaching out. The STVEP team will be in touch soon.</p>
-            <button type="button" class="text-button" id="send-another">Send another message</button>
-          </div>
-        </form>
-      </main>
-
-      <footer>
-        <div class="brand footer-brand">
-          <span class="brand-mark"><span>S</span></span>
-          <span class="brand-copy">stvep<small>School organizer</small></span>
-        </div>
-        <p>Growing curious minds for a changing world.</p>
-        <span>© 2025 STVEP School</span>
-      </footer>
+  <!-- PAGE LOADER -->
+  <div class="loader-wrapper" id="loader">
+    <div class="loader-content">
+      <div class="loader-gear">⚙️</div>
+      <h2>ARCENOVA</h2>
+      <p>Initializing Universe...</p>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
     </div>
+  </div>
 
-    <script type="module" src="/src/app.js"></script>
-    <!-- figma:body-end -->
-  </body>
+  <!-- NAVIGATION BAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-icon">🌌</span>
+        <div class="logo-text">
+          <span class="brand-name">ARCENOVA</span>
+          <span class="brand-sub">ACADEMY</span>
+        </div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#departments">Departments</a>
+        <a href="#campus">Campus</a>
+        <a href="#student-life">Student Life</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#admissions" class="cta-btn mobile-hidden">Apply Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="blueprint-grid"></div>
+    <div class="stars-container" id="starsContainer"></div>
+    <div class="hero-content">
+      <div class="badge">📐 Blueprint ⚙️ Gear 🌌 Constellation</div>
+      <h1 class="hero-title animate-rise">ARCENOVA</h1>
+      <h2 class="hero-subtitle animate-rise">ACADEMY OF ARTS, SCIENCE & ENGINEERING</h2>
+      <p class="hero-tagline animate-rise">"Design. Discover. Build."</p>
+      <div class="hero-buttons animate-rise">
+        <a href="#academics" class="btn primary-btn">Explore Arcenova <span>→</span></a>
+        <a href="#about" class="btn secondary-btn">Discover Our Programs</a>
+      </div>
+    </div>
+    <div class="hero-gear-ring">⚙️</div>
+  </section>
+
+  <!-- ABOUT ARCENOVA -->
+  <section class="section about-section" id="about">
+    <div class="container split-layout">
+      <div class="about-visual glass-card">
+        <div class="blueprint-card-inner">
+          <div class="blueprint-badge">ARCHITECTURAL SCHEMATIC v2.6</div>
+          <div class="schematic-drawing">
+            <div class="sch-circle"></div>
+            <div class="sch-square"></div>
+            <div class="sch-line l1"></div>
+            <div class="sch-line l2"></div>
+            <span class="sch-node n1">📐</span>
+            <span class="sch-node n2">⚙️</span>
+            <span class="sch-node n3">🌌</span>
+          </div>
+          <p class="blueprint-caption">Idea ➔ Blueprint ➔ Execution ➔ Constellation</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3 class="section-eyebrow">✦ Our Philosophy</h3>
+        <h2 class="section-title">Where Creativity Meets Technical Precision</h2>
+        <p>At Arcenova, we believe that brilliant ideas require robust systems to come alive. By merging fine arts, rigorous sciences, and advanced engineering, we empower students to imagine without limits and build with absolute confidence.</p>
+        
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="counter" data-target="15">0</span>+
+            <p>Academic Programs</p>
+          </div>
+          <div class="stat-box">
+            <span class="counter" data-target="30">0</span>+
+            <p>Organizations</p>
+          </div>
+          <div class="stat-box">
+            <span class="counter" data-target="20">0</span>+
+            <p>Modern Facilities</p>
+          </div>
+          <div class="stat-box">
+            <span class="counter" data-target="100">0</span>%
+            <p>Creative Potential</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY CARDS -->
+  <section class="section philosophy-cards-section">
+    <div class="container">
+      <div class="center-heading">
+        <h3 class="section-eyebrow">✦ Pillars of Growth</h3>
+        <h2 class="section-title">The Three Core Pillars</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="phil-card glass-card">
+          <div class="phil-icon">📐</div>
+          <h3>BLUEPRINT</h3>
+          <p class="phil-tag">"Imagine & Design"</p>
+          <p class="phil-desc">Planning the framework, engineering architecture, and translating abstract thoughts into clear, structured blueprints.</p>
+        </div>
+        <div class="phil-card glass-card">
+          <div class="phil-icon">⚙️</div>
+          <h3>GEAR</h3>
+          <p class="phil-tag">"Build & Innovate"</p>
+          <p class="phil-desc">Applying physical science, coding algorithms, and hands-on mechanical building to bring structural blueprints to life.</p>
+        </div>
+        <div class="phil-card glass-card">
+          <div class="phil-icon">🌌</div>
+          <h3>CONSTELLATION</h3>
+          <p class="phil-tag">"Discover & Connect"</p>
+          <p class="phil-desc">Uniting individual student achievements into a broader galaxy of shared discoveries, career networks, and future innovations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMICS -->
+  <section class="section academics-section" id="academics">
+    <div class="container">
+      <div class="center-heading">
+        <h3 class="section-eyebrow">✦ Academic Fields</h3>
+        <h2 class="section-title">Programs Engineered for Tomorrow</h2>
+      </div>
+      <div class="academics-grid">
+        <div class="acard glass-card"><span>🎨</span><h4>Fine Arts</h4><p>Master traditional craft alongside cutting-edge digital expressions.</p></div>
+        <div class="acard glass-card"><span>🔬</span><h4>Science</h4><p>Deep-dive research into physics, chemistry, and biological systems.</p></div>
+        <div class="acard glass-card"><span>⚡</span><h4>Engineering</h4><p>Design robotics, mechanical systems, and sustainable infrastructure.</p></div>
+        <div class="acard glass-card"><span>💻</span><h4>Computer Science</h4><p>Build software, algorithms, and immersive software ecosystems.</p></div>
+        <div class="acard glass-card"><span>🎬</span><h4>Animation & Digital Media</h4><p>Bring characters and cinematic stories to motion graphics.</p></div>
+        <div class="acard glass-card"><span>🧊</span><h4>3D Modeling & Design</h4><p>Sculpt assets for gaming, virtual reality, and industrial product design.</p></div>
+        <div class="acard glass-card"><span>🏛️</span><h4>Architecture</h4><p>Construct futuristic habitats balancing aesthetics and green engineering.</p></div>
+        <div class="acard glass-card"><span>🚀</span><h4>Technology</h4><p>Explore AI, IoT, and advanced systems architecture.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTMENTS (Interactive Tabs) -->
+  <section class="section departments-section" id="departments">
+    <div class="container">
+      <div class="center-heading">
+        <h3 class="section-eyebrow">✦ Specialized Schools</h3>
+        <h2 class="section-title">Explore Our Departments</h2>
+      </div>
+      <div class="dept-tabs">
+        <button class="tab-btn active" data-dept="dept-arts">Fine Arts</button>
+        <button class="tab-btn" data-dept="dept-science">Science</button>
+        <button class="tab-btn" data-dept="dept-eng">Engineering</button>
+        <button class="tab-btn" data-dept="dept-comp">Computing</button>
+        <button class="tab-btn" data-dept="dept-media">Animation</button>
+        <button class="tab-btn" data-dept="dept-arch">Architecture</button>
+      </div>
+      <div class="dept-content-wrapper glass-card">
+        <div class="dept-pane active" id="dept-arts">
+          <h3>School of Fine Arts</h3>
+          <p>Unleash creative potential through a curriculum bridging traditional fine art theory with modern digital painting, spatial installations, and gallery management.</p>
+        </div>
+        <div class="dept-pane" id="dept-science">
+          <h3>School of Science</h3>
+          <p>Conduct empirical research in cutting-edge labs equipped with advanced spectrometry, quantum physics workstations, and bio-tech growth chambers.</p>
+        </div>
+        <div class="dept-pane" id="dept-eng">
+          <h3>School of Engineering</h3>
+          <p>From microcontrollers to heavy robotic fabrication, students design hardware solutions tackling real-world global challenges.</p>
+        </div>
+        <div class="dept-pane" id="dept-comp">
+          <h3>School of Computing & Technology</h3>
+          <p>Master full-stack software development, cybersecurity protocols, and artificial intelligence integration models.</p>
+        </div>
+        <div class="dept-pane" id="dept-media">
+          <h3>School of Digital Media & Animation</h3>
+          <p>Produce high-end cinematic sequences, motion graphics, and interactive storytelling for entertainment sectors.</p>
+        </div>
+        <div class="dept-pane" id="dept-arch">
+          <h3>School of Design & Architecture</h3>
+          <p>Plan eco-friendly structural environments, ergonomic user products, and immersive spatial environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPUS FACILITIES -->
+  <section class="section campus-section" id="campus">
+    <div class="container">
+      <div class="center-heading">
+        <h3 class="section-eyebrow">✦ World-Class Facilities</h3>
+        <h2 class="section-title">The Arcenova Campus</h2>
+      </div>
+      <div class="campus-grid">
+        <div class="campus-card glass-card"><span>⚙️</span><h5>Engineering Lab</h5></div>
+        <div class="campus-card glass-card"><span>🔬</span><h5>Science Lab</h5></div>
+        <div class="campus-card glass-card"><span>🎨</span><h5>Art Studio</h5></div>
+        <div class="campus-card glass-card"><span>🎬</span><h5>Animation Studio</h5></div>
+        <div class="campus-card glass-card"><span>💻</span><h5>Computer Lab</h5></div>
+        <div class="campus-card glass-card"><span>🧊</span><h5>3D Modeling Lab</h5></div>
+        <div class="campus-card glass-card"><span>🎥</span><h5>Digital Media Studio</h5></div>
+        <div class="campus-card glass-card"><span>📚</span><h5>Library Hub</h5></div>
+        <div class="campus-card glass-card"><span>💡</span><h5>Innovation Center</h5></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD THE FUTURE PROCESS -->
+  <section class="section process-section">
+    <div class="container">
+      <div class="center-heading">
+        <h3 class="section-eyebrow">✦ The Journey</h3>
+        <h2 class="section-title">Build The Future</h2>
+      </div>
+      <div class="process-flow">
+        <div class="process-step"><span>01</span><strong>Idea</strong><p>Spark imagination</p></div>
+        <div class="process-line"></div>
+        <div class="process-step"><span>02</span><strong>Blueprint</strong><p>Structure plan</p></div>
+        <div class="process-line"></div>
+        <div class="process-step"><span>03</span><strong>Design</strong><p>Refine aesthetics</p></div>
+        <div class="process-line"></div>
+        <div class="process-step"><span>04</span><strong>Build</strong><p>Engineer code & form</p></div>
+        <div class="process-line"></div>
+        <div class="process-step"><span>05</span><strong>Discover</strong><p>Join the constellation</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT LIFE -->
+  <section class="section life-section" id="student-life">
+    <div class="container">
+      <div class="center-heading">
+        <h3 class="section-eyebrow">✦ Community & Clubs</h3>
+        <h2 class="section-title">Vibrant Student Life</h2>
+      </div>
+      <div class="life-grid">
+        <div class="life-card glass-card">🎨 Art Club</div>
+        <div class="life-card glass-card">🤖 Robotics Club</div>
+        <div class="life-card glass-card">💻 Coding Club</div>
+        <div class="life-card glass-card">🎬 Animation Club</div>
+        <div class="life-card glass-card">⚡ Engineering Society</div>
+        <div class="life-card glass-card">🔬 Science Club</div>
+        <div class="life-card glass-card">🎥 Digital Media Club</div>
+        <div class="life-card glass-card">📐 Design Club</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="section events-section">
+    <div class="container">
+      <div class="center-heading">
+        <h3 class="section-eyebrow">✦ Calendar</h3>
+        <h2 class="section-title">Upcoming Events</h2>
+      </div>
+      <div class="events-grid">
+        <div class="event-card glass-card">
+          <span class="event-tag">Oct 12</span>
+          <h4>Arcenova Innovation Week</h4>
+          <p>Showcase pioneering student projects across tech and art.</p>
+        </div>
+        <div class="event-card glass-card">
+          <span class="event-tag">Nov 04</span>
+          <h4>Art & Design Exhibition</h4>
+          <p>Exhibiting immersive digital media and classical installations.</p>
+        </div>
+        <div class="event-card glass-card">
+          <span class="event-tag">Nov 18</span>
+          <h4>Science Discovery Fair</h4>
+          <p>Interactive breakthrough demonstrations from science majors.</p>
+        </div>
+        <div class="event-card glass-card">
+          <span class="event-tag">Dec 02</span>
+          <h4>Engineering Expo</h4>
+          <p>Live prototype testing, robotics matches, and automation displays.</p>
+        </div>
+        <div class="event-card glass-card">
+          <span class="event-tag">Dec 15</span>
+          <h4>Digital Creation Festival</h4>
+          <p>Screening animated short films and 3D architectural renders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSIONS -->
+  <section class="section admissions-section" id="admissions">
+    <div class="container glass-card admissions-card">
+      <div class="center-heading">
+        <h3 class="section-eyebrow">✦ Join Us</h3>
+        <h2 class="section-title">Start Your Journey</h2>
+      </div>
+      <p class="admissions-intro">Admission to Arcenova is holistic, seeking individuals driven by curiosity, technical aptitude, and creative vision.</p>
+      <div class="admissions-details">
+        <div class="adm-col">
+          <h4>Requirements</h4>
+          <ul>
+            <li>Completed Application Form</li>
+            <li>Academic Transcripts</li>
+            <li>Creative Portfolio or Tech Project</li>
+            <li>Personal Essay</li>
+          </ul>
+        </div>
+        <div class="adm-col">
+          <h4>Deadlines</h4>
+          <ul>
+            <li>Early Application: Nov 30</li>
+            <li>Regular Decision: Mar 15</li>
+            <li>Term Start: August 2026</li>
+          </ul>
+        </div>
+      </div>
+      <div class="center-button">
+        <a href="#contact" class="btn primary-btn glow-btn">Apply Now 🚀</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact">
+    <div class="container contact-container">
+      <div class="contact-info">
+        <h3 class="section-eyebrow">✦ Connect With Us</h3>
+        <h2 class="section-title">Let's Build Together</h2>
+        <p>Have questions about programs, campus tours, or admissions? Reach out to our administrative team.</p>
+        <div class="contact-meta">
+          <p>📍 <strong>Address:</strong> 101 Constellation Way, Innovation District</p>
+          <p>📞 <strong>Phone:</strong> +1 (555) 839-2026</p>
+          <p>✉️ <strong>Email:</strong> admissions@arcenova.edu</p>
+        </div>
+      </div>
+      <form class="contact-form glass-card" id="contactForm">
+        <h3>Send a Message</h3>
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Your Full Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Your Email Address" required />
+        </div>
+        <div class="form-group">
+          <textarea id="message" rows="4" placeholder="How can we help you?" required></textarea>
+        </div>
+        <button type="submit" class="btn primary-btn">Send Message</button>
+        <p id="formFeedback" class="form-feedback"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="footer-icon">🌌</span>
+        <h3>ARCENOVA</h3>
+        <p>ACADEMY OF ARTS, SCIENCE & ENGINEERING</p>
+        <p class="footer-motto">"Design. Discover. Build."</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#admissions">Admissions</a>
+      </div>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <span>🌐</span><span>💼</span><span>📸</span><span>🐦</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Arcenova Academy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
